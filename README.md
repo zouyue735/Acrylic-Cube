@@ -1,2 +1,8 @@
 # Acrylic-Cube
-Monad that can be combined and splitted into the same monad type
+Some monad types and operations on them
+
+List
+
+Option
+
+Generator

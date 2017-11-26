@@ -1,0 +1,19 @@
+{
+  "name": "acrylic-cube",
+  "version": "0.0.1",
+  "description": "Monad that can be combined and splitted into the same monad type",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zouyue735/Acrylic-Cube.git"
+  },
+  "author": "zy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zouyue735/Acrylic-Cube/issues"
+  },
+  "homepage": "https://github.com/zouyue735/Acrylic-Cube#readme"
+}
