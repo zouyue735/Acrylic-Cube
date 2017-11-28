@@ -30,7 +30,7 @@ const handler = {
             case 'function':
             case 'object':
             case 'undefined':
-                return new OptionCube(val)
+                return option(val)
             default:
                 return val
         }
@@ -52,14 +52,14 @@ const handler = {
             case 'function':
             case 'object':
             case 'undefined':
-                return new OptionCube(val)
+                return option(val)
             default:
                 return val
         }
     },
     construct: function(target, argumentsList, newTarget) {
         const ctor = Function.prototype.bind.apply(target, [empty].concat(argumentsList))
-        return new OptionCube(new ctor())
+        return option(new ctor())
     }
 }
 
