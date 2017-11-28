@@ -10,7 +10,20 @@ function defaultCombine() {
 
 }
 
+function isObject(val) {
+    switch (typeof val) {
+        case 'function':
+        case 'object':
+        case 'undefined':
+            return true
+        default:
+            return false
+    }
+}
+
 const empty = {}
 
-exports.empty = empty
 exports.and = and
+exports.isObject = isObject
+
+exports.empty = empty

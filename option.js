@@ -1,4 +1,4 @@
-const {empty} = require('./commons.js')
+const {empty, isObject} = require('./commons.js')
 
 const handler = {
     getPrototypeOf: function(target) {
@@ -26,13 +26,10 @@ const handler = {
     },
     get: function(target, property, receiver) {
         const val = target[property]
-        switch (typeof val) {
-            case 'function':
-            case 'object':
-            case 'undefined':
-                return option(val)
-            default:
-                return val
+        if (isObject(val)) {
+            return option(val)
+        } else {
+            return val
         }
     },
     set: function(target, property, value, receiver) {
@@ -48,13 +45,10 @@ const handler = {
     },
     apply: function(target, thisArg, argumentsList) {
         const val = target.apply(thisArg, argumentsList)
-        switch (typeof val) {
-            case 'function':
-            case 'object':
-            case 'undefined':
-                return option(val)
-            default:
-                return val
+        if (isObject(val)) {
+            return option(val)
+        } else {
+            return val
         }
     },
     construct: function(target, argumentsList, newTarget) {
