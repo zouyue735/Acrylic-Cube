@@ -2,14 +2,6 @@ function and(a, b) {
     return a && b
 }
 
-function defaultSplit(n) {
-    
-}
-
-function defaultCombine() {
-
-}
-
 function isObject(val) {
     switch (typeof val) {
         case 'function':
@@ -21,9 +13,19 @@ function isObject(val) {
     }
 }
 
+function isArray(val) {
+    return isObject(val) && Array.prototype.isPrototypeOf(val)
+}
+
+function isNumber(val) {
+    return (typeof val) == 'number'
+}
+
 const empty = {}
 
 exports.and = and
 exports.isObject = isObject
+exports.isArray = isArray
+exports.isNumber = isNumber
 
 exports.empty = empty
